@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block content %}
+    <h1>Make Your Booking</h1> 
+    <div class="form-group">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.media }} 
+            {{ form.as_p }} 
+            <button class="btn btn-secondary">Send</button>
+        </form>
+    </div>
+{% endblock %}

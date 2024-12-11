@@ -1,0 +1,131 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+{% block content %}
+<p class="mb-4 wow fadeInUp"><strong>
+    This blogs provide detail information about our activitie and resources for python, django, and RestAPI developers. 
+    As a learner, welcome to the developer world where learning resources are available to improve your skills.
+    </strong>
+</p>
+<!-- Blog Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Blog list Start -->
+            <div class="col-lg-8">
+                <div class="row g-5"> 
+                    {% for post in object_list %}
+                        <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
+                            <div class="blog-item bg-light rounded overflow-hidden">
+                                <div class="blog-img position-relative overflow-hidden">
+                                    <img class="img-fluid" src="{{ post.header_image.url }}" alt="">
+                                    <a class="position-absolute top-0 start-0 bg-secondary text-white rounded-end mt-5 py-2 px-4" href="{% url 'postdetail' post.pk %}">{{ post.title }}</a>
+                                </div>
+                                <div class="p-4">
+                                    <div class="d-flex mb-3">
+                                        <small class="me-3"><i class="far fa-user text-secondary me-2"></i>{{ post.author.first_name }} {{ post.author.last_name }} </small>
+                                        <small><i class="far fa-calendar-alt text-secondary me-2"></i>{{ post.created_at }}</small>
+                                    </div>
+                                    <h4 class="mb-3"><a href="{% url 'postdetail' post.pk %}" style="color: black;">{{ post.title }}</a></h4>
+                                    <p>{{ post.snippet }}</p>
+                                    <a class="text-uppercase text-secondary" href="{% url 'postdetail' post.pk %}">Read More <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div> 
+                    {% endfor %}
+                    
+                    <!-- blog post pagination -->
+                    <div class="col-12 wow slideInUp" data-wow-delay="0.1s" style="width: 100px; height: 40px;">
+                        <nav aria-label="Page navigation example">
+                        {% if is_paginated %}
+                        <ul class="pagination"> 
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj_previous_page_number }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="page-item">
+                                    <a class="page-link" href="">&laquo;</a>
+                                </li>
+                            {% endif %} 
+                            
+                            {% for i in paginatojor.page_range %} 
+                                {% if page_obj.number == i %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">{{ i }}</a>
+                                    </li> 
+                                {% else %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                    </li> 
+                                {% endif %} 
+                            {% endfor %} 
+                    
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            {% else %} 
+                                <li class="page-item">
+                                    <a class="page-link">&raquo;</a>
+                                </li> 
+                            {% endif %}
+                        </ul> 
+                        {% endif %}
+                      </nav>
+                    </div>
+                </div>
+            </div> 
+            <!-- Blog list End --> 
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+            <!-- Search Form Start -->
+                <form class="d-flex mb-5 wow slideInUp" method="POST" action="{% url 'search-bar' %}" data-wow-delay="0.1s"> 
+                    {% csrf_token %}
+                    <input class="form-control p-3" type="search" placeholder="Search blog" aria-label="Search" name="searched"> 
+                    <button class="btn btn-outline-secondary px-4" type="submit">Search</button>
+                </form>
+                
+                <!-- Category Start -->
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h3 class="mb-0">Category</h3> 
+                </div>
+
+                {% for category in categories_list %}
+                    <a class="h5 fw-semi-bold rounded py-2 px-3 mb-2 wow slideInup link-animated d-flex flex-column" href="{% url 'postcategory' category.pk %}">
+                        <i class="me-2">{{ category }}</i>
+                    </a>
+                {% endfor %}
+                <!-- Category End -->
+                    <br>
+                <!-- Recent Post Start -->
+                <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0">Recent Post</h3>
+                    </div>
+                    {% for post in object_list %}
+                        <div class="d-flex rounded overflow-hidden mb-3">
+                            <img class="img-fluid" src="{{ post.header_image.url }}" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="{% url 'postdetail' post.pk %}" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
+                                <small>{{ post.title }}</small>
+                            </a> 
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Recent Post End -->
+            </div>
+        </div> 
+    </div> 
+</div> 
+<!-- End Blog --> 
+
+<a class="btn btn-secondary" href="{% url 'home' %}" style="margin-top: 5px;">Home</a>  
+<br><br>
+{% endblock %}
+

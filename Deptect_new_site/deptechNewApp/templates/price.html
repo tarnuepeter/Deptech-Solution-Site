@@ -1,0 +1,401 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+    <title>Deptech Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/dept_favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet"> {% endcomment %}
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib23/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib23/animate/animate.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css23/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css23/style.css' %}" rel="stylesheet"> 
+
+    <style>
+        .topbar-color {
+            background-color: #003c40;
+        } 
+        a-hover:hover {
+            color: #003c40;
+        } 
+    
+        a-hover:active{
+            color: #003c40;
+        } 
+    
+        .bg-col{
+            background-color: #003c40;
+            /* background-color: #A9B9AA; */
+        } 
+    
+        .txt-color{
+            color: #3FC68B
+        } 
+    
+        .service-bg{
+            background-color: #9fde9f; 
+            color: white;
+        } 
+    
+        .footer-bg{
+            background-color: #003c40;
+        } 
+    
+        .service-ht{
+            padding-top: 5px; 
+            margin-top: 5px; 
+        } 
+    
+        .fot-middle{
+            align-items: left; 
+            justify-content: left; 
+            margin-left: 10px;
+        } 
+
+        .body-font{
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class='body-font'>
+   <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block topbar-color">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>
+                        Wood Camp, Paynesville, Monrovia, Liberia
+                    </small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+231776754875</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@deptechsolutions.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fx.com%2FDeptech1%3Ft%3D9WxqzqXWtPIpUm77MqoJLw%26s%3D09%26fbclid%3DIwAR1lXYz8OfC9xJpa2rNYDBmfphpWgebJ8Fz3H1geEEtGADw8uvGFDVXrUBU&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ"><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://web.facebook.com/deptechsolutions/" target="_blank"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdeptech-solutions-2a014628b%3Ffbclid%3DIwAR1xwEVpQshQKE2waRlcDKwlCuhznZB-JiYvINN63L2xuIY1fHNO5G5yJg8&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Fdeptech1%3Figshid%3DMzMyNGUyNmU2YQ%253D%253D%26fbclid%3DIwAR0qwME3jeenp6fsxRz8_fBSjdsw4kA4n3Avts68rY_-ZTHC-x18YgR_c1E&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ"><i class="fab fa-instagram fw-normal"></i></a>
+                    {% comment %} <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="{% static 'img/deptech_logofull.png' %}" style="width: 180px; height: 170px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'home' %}" class="nav-item nav-link">Home</a>
+                    <a href="{% url 'book-now' %}" class="nav-item nav-link">Book a Service</a>
+                    <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
+                    <a href="{% url 'blogposts' %}" class="nav-item nav-link">Blog</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Info</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'price' %}" class="dropdown-item">Pricing Plan</a>
+                            <a href="{% url 'feature' %}" class="dropdown-item">Our features</a>
+                            <a href="{% url 'team' %}" class="dropdown-item">Team Members</a>
+                            <a href="{% url 'testimonial' %}" class="dropdown-item">Testimonial</a>
+                            <a href="{% url 'quote' %}" class="dropdown-item">Free Quote</a>
+                            <a href="{% url 'talent' %}" class="dropdown-item">Training</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                </div>
+                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Prices</h1>
+                    <a href="{% url 'home' %}" class="h5 text-white">Home</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'price' %}" class="h5 text-white">Prices</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+<!-- Pricing Plan Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="section-title pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h5 class="fw-bold text-secondary text-uppercase">Pricing Plan</h5>
+            <h3 class="mb-0">We are Offering Competitive Prices</h3>
+        </div>
+        <div class="row g-0">
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                <div class="service-bg rounded">
+                    <div class="border-bottom py-4 px-5 mb-4">
+                        <h4 class="mb-1" style="color: black;">Basic Plan</h4>
+                        <small class="text-uppercase text-secondary">For Small Size Business</small>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <h1 class="display-5 mb-3">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>150.00<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Year</small>
+                        </h1>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Website</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Domain Name</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Hosting</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>3 month Website Management</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <a href="" class="btn btn-secondary py-2 px-4 mt-4">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                <div class="service-bg rounded shadow position-relative" style="z-index: 1;">
+                    <div class="border-bottom py-4 px-5 mb-4">
+                        <h4 class="mb-1" style="color: black;">Standard Plan</h4>
+                        <small class="text-uppercase text-secondary">For Medium Size Business</small>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <h1 class="display-5 mb-3">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>250.00<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Year</small>
+                        </h1>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Website</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Domain Name</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Hosting</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>6 month Website Management</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <a href="" class="btn btn-secondary py-2 px-4 mt-4">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                <div class="service-bg rounded">
+                    <div class="border-bottom py-4 px-5 mb-4">
+                        <h4 class="mb-1" style="color: black;">Advanced Plan </h4>
+                        <small class="text-uppercase text-secondary">For Large Size Business</small>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <h1 class="display-5 mb-3">
+                            <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>350.00<small
+                                class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Year</small>
+                        </h1>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Website</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Domain Name</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>Hosting</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <div class="d-flex justify-content-between mb-3 text-secondary"><span>1 year Website Management</span><i class="fa fa-check text-secondary pt-1"></i></div>
+                        <a href="" class="btn btn-secondary py-2 px-4 mt-4">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing Plan End -->
+
+<!-- Quote Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title pb-3 mb-5">
+                    <h5 class="fw-bold text-secondary text-uppercase">Request Info</h5>
+                    <h3 class="mb-0">Need A Detail Info Please Feel Free to Contact Us</h3>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="mb-4"><i class="fa fa-reply text-secondary me-3"></i>Reply within 24 hours</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <h5 class="mb-4"><i class="fa fa-phone-alt text-secondary me-3"></i>24 hrs telephone support</h5>
+                    </div>
+                </div>
+                <p class="mb-4">
+                    Our team of train customer service agents are hear to provide you with 24/7 
+                    responses to serve your needs. They are also here to provide more detail on
+                    how each of our service are deliver from design, testing and production phase. 
+                </p>
+                <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-secondary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <h5 class="mb-2">Call to ask any question</h5>
+                        <h4 class="text-secondary mb-0">+231-776-754-875</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="service-bg rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">       
+                        <form action="{% url 'contact-form' %}" method="POST">
+                            {% csrf_token %} 
+                            <div class="row g-3"> 
+                                <div class="col-md-6">
+                                    <input type="text" placeholder="Enter Your Name" name="name" class="form-control border-0 bg-light px-4" style="height: 55px;">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" placeholder="Enter Your Email" name="email" style="height: 55px;" class="form-control border-0 bg-light px-4"> 
+                                </div>
+                                <div class="col-12">
+                                    <input type="tel" placeholder="Enter Your Contact" name="contact" style="height: 55px;" class="form-control border-0 bg-light px-4">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" placeholder="Subject" name="subject" style="height: 55px;" class="form-control border-0 bg-light px-4">
+                                </div>
+                                <div class="col-12">
+                                    <textarea placeholder="Write Your Message" name="message" style="height: 55px;" class="form-control border-0 bg-light px-4"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-secondary w-100 py-3" value="Send" name="Submit">
+                                </div>
+                                {% if message %}
+                                <div class="alert alert-success">
+                                    {{ message }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Quote End -->
+
+     <!-- Footer Start -->
+     <div class="container-fluid footer footer-bg wow fadeIn" data-wow-delay=".3s">
+        <div class="container pt-5 pb-4">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'img/deptech_logofull.png' %}" style="width: 150px; height: 140px;">
+                    </a>
+                    <p class="mt-4 text-light">We Provide effective and efficient IT & Software Solutions to Organizations, Institutions and 
+                        Businesses for effective operation and profit making .</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-secondary">Short Link</a>
+                    <div class="mt-4 d-flex flex-column short-link">
+                        <a href="{% url 'home' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Home</a>
+                        <a href="{% url 'about' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>About</a>
+                        <a href="{% url 'service' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Services</a>
+                        <a href="{% url 'team' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Team</a>
+                        <a href="{% url 'blogposts' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Blog</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-secondary">Help Link</a>
+                    <div class="mt-4 d-flex flex-column help-link">
+                        <a href="{% url 'price' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Pricing</a>
+                        <a href="{% url 'testimonial' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Testimonial</a>
+                        <a href="{% url 'quote' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Request Info</a>
+                        <a href="{% url 'talent' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Training</a>
+                        <a href="{% url 'contact' %}" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <a href="#" class="h3 text-secondary">Contact Us</a>
+                    <div class="text-white mt-4 d-flex flex-column contact-link">
+                        <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Wood Camp, Paynesville, Liberia</a>
+                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (+231)776754875 | 888472534</a>
+                        <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> info@deptechsolutions.com</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="text-light mt-5 mb-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <span class="text-secondary"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Deptech Solutions</a>, All right reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <span class="text-light">
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fx.com%2FDeptech1%3Ft%3D9WxqzqXWtPIpUm77MqoJLw%26s%3D09%26fbclid%3DIwAR1lXYz8OfC9xJpa2rNYDBmfphpWgebJ8Fz3H1geEEtGADw8uvGFDVXrUBU&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ"><i class="fab fa-twitter fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://web.facebook.com/deptechsolutions/" target="_blank"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdeptech-solutions-2a014628b%3Ffbclid%3DIwAR1xwEVpQshQKE2waRlcDKwlCuhznZB-JiYvINN63L2xuIY1fHNO5G5yJg8&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2Fdeptech1%3Figshid%3DMzMyNGUyNmU2YQ%253D%253D%26fbclid%3DIwAR0qwME3jeenp6fsxRz8_fBSjdsw4kA4n3Avts68rY_-ZTHC-x18YgR_c1E&h=AT1qllp33PoFCQBx2ZcfA0UIItPQ4IxT-U-aACdRtAeOLktujr2qkGFwF9KD0Z7NwY0QnWNruSwrXefbbo6AjMuoSLo3KL4JP9LCQ4ntNw9uEIUEZeXYzbxXLbH16Jj8ZSeyLQ"><i class="fab fa-instagram fw-normal"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static 'lib23/wow/wow.min.js' %}"></script>
+
+    <script src="{% static 'lib23/easing/easing.min.js' %}"></script>
+
+    <script src="{% static 'lib23/waypoints/waypoints.min.js' %}"></script>
+
+    <script src="{% static 'lib23/counterup/counterup.min.js' %}"></script>
+
+    <script src="{% static 'lib23/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js23/main.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    <center>
+        {% if searched %}
+            <h4>Search results ....</h4> 
+            <br>
+            {% for post in blogs  %}
+                <a href="{% url 'postdetail' post.pk %}" style="color: black;">{{ post }}</a>
+                 <br>
+            {% endfor %}
+        {% else %} 
+            <h5>Ahhh.... You forgot to search for a blog post </h5>
+        {% endif %}
+    </center>
+    <br> 
+    <a class="btn btn-secondary" href="{% url 'blogposts' %}">Home</a>  
+    <br><br>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+
+{% load static %} 
+
+
+{% block content %}
+    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+        <h3 class="mb-0">{{ category.name }}</h3> 
+    </div>
+    {% for post in category.posts.all %} 
+    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+        <div class="link-animated d-flex flex-column justify-content-start">
+            <time>{{ post.created_at|date:"d M, Y h:i" }}</time>
+            <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="{% url 'postdetail' post.pk %}">{{ post.title }}<i class="bi bi-arrow-right me-2"></i></a>
+        </div>
+    </div>
+    {% endfor %} 
+    <br>
+    <a class="btn btn-secondary" href="{% url 'blogposts' %}">Home</a> 
+    <br><br>
+{% endblock %}
+    

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block content %}
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-8">
+                    <!-- Blog Detail Start -->
+                    <div class="mb-5">
+                        <small>By: {{ post.author.first_name }} {{ post.author.last_name }} - Posted at: {{ post.created_at }}</small>  <hr> <br>
+                        <img class="img-fluid w-100 rounded mb-5" src="{{ post.header_image.url }}" alt="">
+                         <h1>{{ post.title }}</h1> 
+                         <p>{{ post.body }}</p>
+                    </div>
+                    <!-- Blog Detail End -->
+                </div>
+                <!-- Side bar -->
+                <div class="col-lg-4">
+                    <!-- Search Form Start -->
+                    <form class="d-flex mb-5 wow slideInUp" method="POST" action="{% url 'search-bar' %}" data-wow-delay="0.1s"> 
+                        {% csrf_token %}
+                        <input class="form-control p-3" type="search" placeholder="Search blog" aria-label="Search" name="searched"> 
+                        <button class="btn btn-outline-secondary px-4" type="submit">Search</button>
+                    </form>
+                    <!-- Search Form End --> 
+                    
+                    <!-- Category Start -->
+                    <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                        <h3 class="mb-0">Category</h3> 
+                    </div>
+                    {% for cats in categories_list %} 
+                        <a class="h5 fw-semi-bold rounded py-2 px-3 mb-2 wow slideInup link-animated d-flex flex-column bg-light" href="{% url 'postcategory' cats.pk %}">
+                            <i class="bi bi-arrow-right me-2">{{ cats }}</i>
+                        </a>
+                    {% endfor %} 
+                    <br>
+                    <!-- Category End -->
+
+                    <!-- Recent Post -->
+                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="mb-0">Recent Post</h3>
+                        </div>
+                        {% for post in post_list %}
+                            <div class="d-flex rounded overflow-hidden mb-3">
+                                <img class="img-fluid" src="{{ post.header_image.url }}" style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                                <a href="{% url 'postdetail' post.pk %}" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
+                                    {{ post.title }} <br> 
+                                    {{post.snippet }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                        
+                        <!-- blog post pagination -->
+                        <div class="col-12 wow slideInUp" data-wow-delay="0.1s" style="width: 100px; height: 40px;">
+                            <nav aria-label="Page navigation example">
+                            {% if is_paginated %}
+                            <ul class="pagination"> 
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj_previous_page_number }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="">&laquo;</a>
+                                    </li>
+                                {% endif %} 
+                                
+                                {% for i in paginatojor.page_range %} 
+                                    {% if page_obj.number == i %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">{{ i }}</a>
+                                        </li> 
+                                    {% else %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                                        </li> 
+                                    {% endif %} 
+                                {% endfor %} 
+                        
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %} 
+                                    <li class="page-item">
+                                        <a class="page-link">&raquo;</a>
+                                    </li> 
+                                {% endif %}
+                            </ul> 
+                            {% endif %}
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-secondary" href="{% url 'blogposts' %}">Home</a> <br><br>
+{% endblock %}
